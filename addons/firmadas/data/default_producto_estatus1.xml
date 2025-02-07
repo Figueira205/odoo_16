@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        
+        <record id="producto_estatus1_documental" model="crm.lead.producto_estatus1">
+            <field name="name">DOCUMENTAL</field>
+            <field name="producto_subtipo_id" ref="producto_subtipo_dacion_en_pago_extrajudicial"/>
+        </record>
+
+    </data>
+</odoo>

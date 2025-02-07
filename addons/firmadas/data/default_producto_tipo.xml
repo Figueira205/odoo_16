@@ -1,0 +1,19 @@
+<odoo>
+    <data noupdate="1">
+        <record id="producto_tipo_bancario" model="crm.lead.producto_tipo">
+            <field name="name">BANCARIO</field>
+        </record>
+        <record id="producto_tipo_lsop_concursal" model="crm.lead.producto_tipo">
+            <field name="name">LSOP-CONCURSAL</field>
+        </record>
+        <record id="producto_tipo_laboral" model="crm.lead.producto_tipo">
+            <field name="name">LABORAL</field>
+        </record>
+        <record id="producto_tipo_extranjeria" model="crm.lead.producto_tipo">
+            <field name="name">EXTRANJERIA</field>
+        </record>
+        <record id="producto_tipo_proteccion_datos" model="crm.lead.producto_tipo">
+            <field name="name">PROTECCIÓN DE DATOS</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,10 @@
+<odoo>
+    <!-- Menú Principal -->
+    <menuitem id="menu_interviniente_root" name="Intervinientes" sequence="10"/>
+
+    <!-- Submenú de Lista de Intervinientes -->
+    <menuitem id="menu_interviniente_list"
+              name="Lista de Intervinientes"
+              parent="menu_interviniente_root"
+              action="action_interviniente"/>
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+
+        <record id="producto_subtipo_dacion_en_pago_extrajudicial" model="crm.lead.producto_subtipo">
+            <field name="name">DACION EN PAGO EXTRAJUDICIAL</field>
+            <field name="producto_tipo_id" ref="producto_tipo_bancario"/>
+        </record>
+
+        <record id="producto_subtipo_dacion_en_pago_judicial" model="crm.lead.producto_subtipo">
+            <field name="name">DACION EN PAGO JUDICIAL</field>
+            <field name="producto_tipo_id" ref="producto_tipo_bancario"/>
+        </record>
+    </data>
+
+
+</odoo>

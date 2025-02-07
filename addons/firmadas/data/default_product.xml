@@ -1,0 +1,10 @@
+<odoo>
+    <record id="product_asesoria" model="product.template">
+        <field name="name">Asesoría</field>
+        <field name="type">service</field>
+        <field name="invoice_policy">order</field>
+        <field name="list_price">0.0</field>
+        <field name="taxes_id" eval="[(6, 0, [5])]"/>
+        <field name="standard_price">0.0</field>
+    </record>
+</odoo>

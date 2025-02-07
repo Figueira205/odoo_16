@@ -1,0 +1,7 @@
+<odoo>
+    <record id="group_service_manager" model="res.groups">
+        <field name="name">Gestor de Servicio</field>
+        <field name="category_id" ref="base.module_category_services"/>  <!-- Asegura que tiene categoría -->
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>  
+    </record>
+</odoo>

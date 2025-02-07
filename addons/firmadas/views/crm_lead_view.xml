@@ -1,0 +1,87 @@
+<odoo>
+    <record id="view_crm_lead_form_firmadas" model="ir.ui.view">
+        <field name="name">crm.lead.form.firmadas</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/notebook" position="before">
+                
+                <group>
+                    <!-- Campo visible con filtro aplicado -->
+                    <field name="gestor_id" options="{'no_create_edit': True, 'no_create': True}"/>
+                    <!-- Campo Many2many usado en el dominio (invisible para evitar que el usuario lo vea) -->
+                    <field name="available_gestor_ids" invisible="1"/>
+                </group>
+                <!-- Información de Producto fuera de las pestañas, ahora al inicio -->
+                <group string="Tipo Producto y Estatus">
+                    <group>
+                        <field name="producto_tipo_id" required="1" options="{'no_create_edit': True, 'no_create': True}"/>
+                        <field name="producto_subtipo_id" required="1" domain="[('producto_tipo_id', '=', producto_tipo_id)]" options="{'no_create_edit': True, 'no_create': True}"/>
+                    </group>
+                    <group>
+                        <field name="producto_estatus1_id" domain="[('producto_subtipo_id', '=', producto_subtipo_id)]" options="{'no_create_edit': True, 'no_create': True}"/>
+                        <field name="producto_estatus2_id" domain="[('producto_estatus1_id', '=', producto_estatus1_id)]" options="{'no_create_edit': True, 'no_create': True}"/>
+                        <field name="producto_estatus3_id" domain="[('producto_estatus2_id', '=', producto_estatus2_id)]" options="{'no_create_edit': True, 'no_create': True}"/>
+                        <field name="producto_estatus4_id" domain="[('producto_estatus3_id', '=', producto_estatus3_id)]" options="{'no_create_edit': True, 'no_create': True}"/>
+                    </group>
+                </group>
+                
+                <!-- Campos ocultos -->
+                <group>
+                    <field name="tiene_factura" invisible="1"/>
+                    <field name="factura_id" invisible="1"/>
+                </group>
+
+            </xpath>
+
+            <xpath expr="//notebook" position="inside">
+                
+                <!-- Pestaña de Intervinientes -->
+                <page string="Intervinientes">
+                    <group string="Intervinientes">
+                        <field name="intervinientes_ids">
+                            <tree editable="bottom">
+                                <field name="partner_id"/>
+                                <field name="tipo"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+                
+                <!-- Pestaña de Cotitulares -->
+                <page string="Cotitulares">
+                    <field name="cotitulares_ids">
+                        <tree editable="bottom">
+                            <field name="name"/>
+                        </tree>
+                    </field>
+                </page>
+
+                <!-- Pestaña de Factura -->
+                <page string="Factura">
+                    <!-- Grupo de Información de Firma -->
+                    <group string="" >
+                        <group string="Información de Firma" attrs="{'invisible': [('tiene_factura', '=', True)]}">
+                            <field name="importe_firmado" required="1"/>
+                            <field name="fecha_firma"/>
+                            <field name="tipo_contrato"/>
+                            <field name="responsable_firma"/>
+                        </group>
+                        <group string="Generar Factura" attrs="{'invisible': [('tiene_factura', '=', True)]}">
+                            <button name="crear_presupuesto_factura" string="Generar Presupuesto y Factura" type="object" class="btn-primary"/>
+                        </group>
+                        <table attrs="{'invisible': [('tiene_factura', '=', False)]}" colspan="2" style="text-align: center;">
+                            <tr>
+                                <td><button name="ir_a_factura" string=" Factura ya creada -> Ir a Factura" type="object" class="btn-info p-2" icon="fa-external-link"/></td>
+                            </tr>
+                        </table>
+                    </group>
+
+                </page>
+                
+            </xpath>
+        </field>
+    </record>
+</odoo>
+
+

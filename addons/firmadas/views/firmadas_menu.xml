@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="menu_firmadas_root" name="Firmadas" sequence="10"/>
+    <menuitem id="menu_firmadas" name="Oportunidades Firmadas" parent="menu_firmadas_root" action="crm.crm_lead_action_pipeline" sequence="20"/>
+</odoo>

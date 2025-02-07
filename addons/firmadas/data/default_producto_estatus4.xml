@@ -1,0 +1,9 @@
+<odoo>
+    <data noupdate="1">
+        <record id="producto_estatus4_archivo" model="crm.lead.producto_estatus4">
+            <field name="name">ARCHIVO</field>
+            <field name="producto_estatus3_id" ref="producto_estatus3_acuerdo"/>
+        </record>
+
+    </data>
+</odoo>

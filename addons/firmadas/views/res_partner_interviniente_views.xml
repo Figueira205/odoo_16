@@ -1,0 +1,29 @@
+<odoo>
+    <!-- Vista de lista para Intervinientes -->
+    <record id="view_res_partner_interviniente_tree" model="ir.ui.view">
+        <field name="name">res.partner.interviniente.tree</field>
+        <field name="model">res.partner.interviniente</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="partner_id"/>
+                <field name="tipo"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Vista de formulario para Intervinientes -->
+    <record id="view_res_partner_interviniente_form" model="ir.ui.view">
+        <field name="name">res.partner.interviniente.form</field>
+        <field name="model">res.partner.interviniente</field>
+        <field name="arch" type="xml">
+            <form string="Interviniente">
+                <sheet>
+                    <group>
+                        <field name="partner_id"/>
+                        <field name="tipo"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,12 @@
+<odoo>
+    <record id="action_interviniente" model="ir.actions.act_window">
+        <field name="name">Intervinientes</field>
+        <field name="res_model">res.partner.interviniente</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>
+                Aquí puedes gestionar los intervinientes. Puedes crear, editar y eliminar intervinientes según sea necesario.
+            </p>
+        </field>
+    </record>
+</odoo>
