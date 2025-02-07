@@ -4,7 +4,7 @@
         <field name="type">service</field>
         <field name="invoice_policy">order</field>
         <field name="list_price">0.0</field>
-        <field name="taxes_id" eval="[(6, 0, [5])]"/>
+        <field name="taxes_id" eval="[(6, 0, [])]"/>
         <field name="standard_price">0.0</field>
     </record>
 </odoo>
