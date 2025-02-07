@@ -32,6 +32,14 @@
         </field>
     </record>
 
+    <!--  Agregar la acción que faltaba -->
+    <record id="hr_productivity_action" model="ir.actions.act_window">
+        <field name="name">Registro de Productividad</field>
+        <field name="res_model">hr.productivity</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Menús -->
     <menuitem id="menu_hr_productivity_root" name="Productividad" parent="hr.menu_hr_root" sequence="10"/>
     <menuitem id="menu_hr_productivity" name="Registros" parent="menu_hr_productivity_root" action="hr_productivity_action"/>
 </odoo>
