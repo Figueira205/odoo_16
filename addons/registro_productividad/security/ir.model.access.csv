@@ -1,6 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_despacho_abogado,despacho.abogado,model_despacho_abogado,base.group_user,1,1,1,1
-access_despacho_cliente,despacho.cliente,model_despacho_cliente,base.group_user,1,1,1,1
-access_despacho_proceso,despacho.proceso,model_despacho_proceso,base.group_user,1,1,1,1
-access_despacho_etapa,despacho.etapa,model_despacho_etapa,base.group_user,1,1,1,1
 access_hr_productivity,access_hr_productivity,model_hr_productivity,,1,1,1,1
