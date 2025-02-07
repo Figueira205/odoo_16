@@ -4,7 +4,7 @@
     'version': '1.0',
     'summary': 'Registro de productividad de empleados',
     'description': 'Módulo para registrar métricas de productividad de empleados',
-    'author': 'Tu Nombre',
+    'author': 'Figueira',
     'depends': ['hr'],
     'data': [
         'security/ir.model.access.csv',
