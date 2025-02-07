@@ -1,0 +1,37 @@
+<odoo>
+    <record id="view_hr_productivity_form" model="ir.ui.view">
+        <field name="name">hr.productivity.form</field>
+        <field name="model">hr.productivity</field>
+        <field name="arch" type="xml">
+            <form string="Registro de Productividad">
+                <sheet>
+                    <group>
+                        <field name="employee_id"/>
+                        <field name="date"/>
+                        <field name="task_count"/>
+                        <field name="hours_worked"/>
+                        <field name="performance_score" readonly="1"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_hr_productivity_tree" model="ir.ui.view">
+        <field name="name">hr.productivity.tree</field>
+        <field name="model">hr.productivity</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="employee_id"/>
+                <field name="date"/>
+                <field name="task_count"/>
+                <field name="hours_worked"/>
+                <field name="performance_score"/>
+            </tree>
+        </field>
+    </record>
+
+    <menuitem id="menu_hr_productivity_root" name="Productividad" parent="hr.menu_hr_root" sequence="10"/>
+    <menuitem id="menu_hr_productivity" name="Registros" parent="menu_hr_productivity_root" action="hr_productivity_action"/>
+</odoo>

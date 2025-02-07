@@ -1,0 +1,23 @@
+<odoo>
+    <report
+        id="hr_productivity_report"
+        model="hr.productivity"
+        string="Reporte de Productividad"
+        report_type="qweb-pdf"
+        file="hr_productivity.report_productivity"
+        name="hr_productivity.report_productivity"
+    />
+
+    <template id="report_productivity">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h2>Reporte de Productividad</h2>
+                <p>Empleado: <t t-esc="doc.employee_id.name"/></p>
+                <p>Fecha: <t t-esc="doc.date"/></p>
+                <p>Número de Tareas: <t t-esc="doc.task_count"/></p>
+                <p>Horas Trabajadas: <t t-esc="doc.hours_worked"/></p>
+                <p>Puntuación de Desempeño: <t t-esc="doc.performance_score"/></p>
+            </t>
+        </t>
+    </template>
+</odoo>

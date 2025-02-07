@@ -1,0 +1,166 @@
+<odoo>
+  <data>
+
+    <!--  VISTAS PARA ABOGADO -->
+    <record model="ir.ui.view" id="despacho_abogado_list">
+      <field name="name">Lista de Abogados</field>
+      <field name="model">despacho.abogado</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="edad"/>
+          <field name="points"/>
+          <field name="estado"/>
+          <field name="nivel"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="despacho_abogado_form">
+      <field name="name">Formulario de Abogado</field>
+      <field name="model">despacho.abogado</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="description"/>
+            <field name="edad"/>
+            <field name="fecha_nacimiento"/>
+            <field name="points"/>
+            <field name="estado"/>
+            <field name="nivel"/>
+          </group>
+          <group>
+            <field name="cliente_ids"/>
+            <field name="proceso_ids" widget="many2many_tags"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--  VISTAS PARA CLIENTE -->
+    <record model="ir.ui.view" id="despacho_cliente_list">
+      <field name="name">Lista de Clientes</field>
+      <field name="model">despacho.cliente</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="abogado_id"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="despacho_cliente_form">
+      <field name="name">Formulario de Cliente</field>
+      <field name="model">despacho.cliente</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="abogado_id"/>
+            <field name="description"/>
+          </group>
+          <group>
+            <field name="etapa_ids"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--  VISTAS PARA PROCESO -->
+    <record model="ir.ui.view" id="despacho_proceso_list">
+      <field name="name">Lista de Procesos</field>
+      <field name="model">despacho.proceso</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="abogado_ids"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="despacho_proceso_form">
+      <field name="name">Formulario de Proceso</field>
+      <field name="model">despacho.proceso</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="name"/>
+            <field name="abogado_ids" widget="many2many_tags"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--  VISTAS PARA ETAPA -->
+    <record model="ir.ui.view" id="despacho_etapa_list">
+      <field name="name">Lista de Etapas</field>
+      <field name="model">despacho.etapa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="cliente_id"/>
+          <field name="proceso_id"/>
+          <field name="etapa"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="despacho_etapa_form">
+      <field name="name">Formulario de Etapa</field>
+      <field name="model">despacho.etapa</field>
+      <field name="arch" type="xml">
+        <form>
+          <group>
+            <field name="cliente_id"/>
+            <field name="proceso_id"/>
+            <field name="etapa"/>
+          </group>
+        </form>
+      </field>
+    </record>
+
+    <!--  ACCIONES -->
+    <record model="ir.actions.act_window" id="despacho_abogado_action">
+      <field name="name">Abogados</field>
+      <field name="res_model">despacho.abogado</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="despacho_cliente_action">
+      <field name="name">Clientes</field>
+      <field name="res_model">despacho.cliente</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="despacho_proceso_action">
+      <field name="name">Procesos</field>
+      <field name="res_model">despacho.proceso</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="despacho_etapa_action">
+      <field name="name">Etapas</field>
+      <field name="res_model">despacho.etapa</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--  MENÚ PRINCIPAL -->
+    <menuitem name="Despacho" id="despacho_menu_root"/>
+
+    <!--  SUBMENÚS -->
+    <menuitem name="Administración" id="despacho_menu_administracion" parent="despacho_menu_root"/>
+
+    <menuitem name="Abogados" id="despacho_menu_abogados" parent="despacho_menu_administracion"
+              action="despacho_abogado_action"/>
+
+    <menuitem name="Clientes" id="despacho_menu_clientes" parent="despacho_menu_administracion"
+              action="despacho_cliente_action"/>
+
+    <menuitem name="Procesos" id="despacho_menu_procesos" parent="despacho_menu_administracion"
+              action="despacho_proceso_action"/>
+
+    <menuitem name="Etapas" id="despacho_menu_etapas" parent="despacho_menu_administracion"
+              action="despacho_etapa_action"/>
+
+  </data>
+</odoo>
